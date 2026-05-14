@@ -38,3 +38,5 @@ simple-click-game/
 ├── style.css
 ├── script.js
 └── sounds/
+
+🌐 Live Demo :https://your-game-link.netlify.app
