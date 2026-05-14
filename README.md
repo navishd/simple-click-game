@@ -32,11 +32,16 @@ In this game, the player has to click the moving box as many times as possible b
 
 ## 📁 Project Structure
 
-```text
 simple-click-game/
 ├── index.html
 ├── style.css
 ├── script.js
 └── sounds/
 
-🌐 Live Demo :https://your-game-link.netlify.app
+## 🌐 Live Demo
+
+https://prismatic-baklava-d115d6.netlify.app/
+
+## 👨‍💻 Developed By
+
+Navishmitha Dakshith
