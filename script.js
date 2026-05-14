@@ -14,7 +14,17 @@ const highScoreText = document.getElementById("highScore");
 highScoreText.innerText = highScore;
 const timeText = document.getElementById("time");
 
+const startScreen = document.getElementById("startScreen");
+
+const gameOverScreen = document.getElementById("gameOverScreen");
+
+const finalScore = document.getElementById("finalScore");
+
 function startGame() {
+
+  startScreen.classList.add("hidden");
+
+  gameOverScreen.classList.add("hidden");
     clearInterval(timer);
 
     score = 0;
@@ -41,21 +51,28 @@ function startGame() {
 }
 
 function endGame() {
+
     clearInterval(timer);
+
     timer = null;
+
     gameRunning = false;
 
     box.style.display = "none";
 
     gameOverSound.play();
 
+    finalScore.innerText = score;
+
+    gameOverScreen.classList.remove("hidden");
+
     if (score > highScore) {
+
         highScore = score;
+
         localStorage.setItem("highScore", highScore);
+
         highScoreText.innerText = highScore;
-        alert("New High Score! Your score is: " + score);
-    } else {
-        alert("Game Over! Your score is: " + score);
     }
 }
 
@@ -67,6 +84,12 @@ box.onclick = function () {
 
     clickSound.currentTime = 0;
     clickSound.play();
+
+    box.style.transform = "scale(0.8)";
+
+    setTimeout(() => {
+    box.style.transform = "scale(1)";
+    } , 100);
 
     score++;
     scoreText.innerText = score;
@@ -96,4 +119,18 @@ function moveBox() {
 
     box.style.left = randomX + "px";
     box.style.top = randomY + "px";
+    box.style.background = randomColor();
+}
+
+function randomColor() {
+
+    const letters = "0123456789ABCDEF";
+
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
 }

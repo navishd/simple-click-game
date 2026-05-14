@@ -40,7 +40,12 @@ h1 {
     display: none;
     cursor: pointer;
     border-radius: 10px;
-    transition: 0.1s;
+    transition:
+left 0.25s ease,
+top 0.25s ease,
+width 0.2s,
+height 0.2s,
+transform 0.1s;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
@@ -82,4 +87,41 @@ p {
     button {
         width: 80%;
     }
+}
+
+#stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.screen {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.7);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 10;
+
+    border-radius: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.screen h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
